@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f3ef;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* 1. ФОН ДЛЯ ШАПКИ (HEADER) */
+header {
+    background-image: url('https://i.pinimg.com/736x/75/2d/6e/752d6e93511d6df7a460720ff442ffd1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 1.2s ease-out forwards;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #8b0000;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
+    animation: fadeInDown 1s ease-out forwards, float 3s ease-in-out infinite alternate;
+}
+
+/* 2. ФОН ДЛЯ ОСНОВНОГО БЛОКА (MAIN) */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                      url('https://i.pinimg.com/736x/d5/15/3d/d5153d6e9d4bd7446274b06034cbcb6d.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+main img {
+    max-width: 70%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+main img:hover {
+    transform: scale(1.06) rotate(1deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+main p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1a1a1a;
+    opacity: 0;
+}
+
+/* Поочередное всплытие абзацев */
+.anim-p1 { animation: fadeInUp 0.8s ease-out 0.2s forwards; }
+.anim-p2 { animation: fadeInUp 0.8s ease-out 0.4s forwards; }
+.anim-p3 { animation: fadeInUp 0.8s ease-out 0.6s forwards; }
+.anim-p4 { animation: fadeInUp 0.8s ease-out 0.8s forwards; }
+
+/* 3. ФОН ДЛЯ ПОДВАЛА (FOOTER) */
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background-image: url('https://i.pinimg.com/1200x/ad/1c/08/ad1c080353e5405a810e2f6830ad611c.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+footer div {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 240px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+footer div:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Ссылки внутри карточек подвала */
+footer a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+footer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+footer div:hover img {
+    transform: scale(1.02);
+}
+
+footer h3 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d9534f;
+    transition: color 0.3s ease;
+}
+
+footer a:hover h3 {
+    color: #8b0000;
+}
+
+/* --- НОВЫЕ И УЛУЧШЕННЫЕ АНИМАЦИИ --- */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация плавного покачивания заголовка */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-6px);
+    }
+}
